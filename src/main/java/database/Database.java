@@ -1,18 +1,42 @@
 package database;
 
 import config.DatabaseConfig;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import models.User;
 
-import java.sql.*;
-
-public class DataBase {
-	public static Connection connection = null;
+public class Database {
+    public static Connection connection = null;
 	
 	static {
 		try {
 			connection = DriverManager.getConnection(DatabaseConfig.CONNECTION_URL, DatabaseConfig.USERNAME, DatabaseConfig.PASSWORD);
 		} catch (SQLException throwables) {
 			throwables.printStackTrace();
+		}
+	}
+	
+	public static ArrayList<User> selectAllUsers() {
+		try {
+			var users = new ArrayList<User>();
+			
+			Statement statement =connection.createStatement();
+			ResultSet resultSet = statement.executeQuery("SELECT * FROM user");
+			
+			while (resultSet.next()) {
+				User user = new User(resultSet.getString("username"), resultSet.getString("password"));
+				users.add(user);
+			}
+			
+			return users;
+		} catch (SQLException throwables) {
+			throwables.printStackTrace();
+			return new ArrayList<>();
 		}
 	}
 	
@@ -44,10 +68,3 @@ public class DataBase {
 		return null;
 	}
 }
-
-
-
-
-
-
-
