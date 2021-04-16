@@ -10,6 +10,7 @@ public class Settings extends javax.swing.JFrame {
 		
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		initListeners();
+                initComponents();
 	}
     private void initListeners() {
 		initWindowListeners();
@@ -35,7 +36,7 @@ public class Settings extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/logo.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\arastoo\\Pictures\\NavalBattle\\logo.jpg")); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(38, 61, 68));
 

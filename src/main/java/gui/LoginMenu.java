@@ -11,6 +11,7 @@ public class LoginMenu extends javax.swing.JFrame {
 		this.MAIN_MENU_FRAME = mainMenuFrame;
 		
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                initComponents();
 		initListeners();
 	}
 
@@ -32,11 +33,9 @@ public class LoginMenu extends javax.swing.JFrame {
 						User user = Database.getUserByUsername(username);
 						
 						if (user != null && user.password.equals(password)) {
-							Dashboard dashboard = new Dashboard(MAIN_MENU_FRAME);
+							Dashboard dashboard = new Dashboard(MAIN_MENU_FRAME, username);
+                                                        this.setVisible(false);
 							dashboard.setVisible(true);
-							
-							this.dispose();
-							return;
 						}
 					}
 					

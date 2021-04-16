@@ -102,7 +102,7 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="SettingsButton" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="WelcomeUserLabel" min="-2" pref="281" max="-2" attributes="0"/>
+                          <Component id="WelcomeUserLabel" alignment="0" min="-2" pref="369" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="30" max="32767" attributes="0"/>
                   </Group>

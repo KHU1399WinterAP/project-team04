@@ -70,7 +70,7 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resources/icons/logo.jpg"/>
+              <Image iconType="2" name="C:\Users\arastoo\Pictures\NavalBattle\logo.jpg"/>
             </Property>
           </Properties>
         </Component>

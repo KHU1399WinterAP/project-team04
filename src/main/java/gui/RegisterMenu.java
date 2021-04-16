@@ -1,5 +1,7 @@
 package gui;
+import database.Database;
 import javax.swing.*;
+import models.User;
 import utils.GuiUtils;
 public class RegisterMenu extends javax.swing.JFrame {
     private final JFrame MAIN_MENU_FRAME;
@@ -20,8 +22,11 @@ public class RegisterMenu extends javax.swing.JFrame {
 		RegisterButton.addActionListener(
 				e -> {
 					var username = UsernameTextField.getText();
-					var password = String.valueOf(PasswordField.getPassword());
-					
+					var password = String.valueOf(PasswordField.getPassword()); 
+					Database.insertIntoUser(new User(username, password));
+					RegisteredMenu registered = new RegisteredMenu(MAIN_MENU_FRAME);
+					this.setVisible(false);
+                                        registered.setVisible(true);
 				}
 		);
 	}
