@@ -13,7 +13,7 @@
 + MYSQL Workbench(for database and authentication System)
 + MYSQl connector java
  
- # Running project :
+ # Running project on your system :
  For run this project on your system after clone that
  
  1.Download MySQL connector java
